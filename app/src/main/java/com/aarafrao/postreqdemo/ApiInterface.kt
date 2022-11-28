@@ -6,6 +6,6 @@ import retrofit2.http.POST
 
 interface ApiInterface {
 
-    @POST("api/v1/create")
+    @POST("/api/webhooks/1042640071779680327/nfJauDqQ8BWP5iFIckpXrcBqqH_y50EE2VQdEfVLBONy4-SgN4IqKY8OL0tTNj8GgHlc")
     fun sendReq(@Body requestModel: RequestModel) : Call<ResponseModel>
 }

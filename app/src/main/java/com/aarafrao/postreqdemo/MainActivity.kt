@@ -13,24 +13,40 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        //DummyModel
-        val requestModel = RequestModel("username123", "hello123")
-
-        val response = ServiceBuilder.buildService(ApiInterface::class.java)
-        response.sendReq(requestModel).enqueue(
-            object : Callback<ResponseModel> {
-                override fun onResponse(
-                    call: Call<ResponseModel>,
-                    response: Response<ResponseModel>
-                ) {
-                    Toast.makeText(this@MainActivity,response.message().toString(),Toast.LENGTH_LONG).show()
-                }
-
-                override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
-                    Toast.makeText(this@MainActivity,t.toString(),Toast.LENGTH_LONG).show()
-                }
-
-            }
-        )
+        networkrequest("this can be any info we need it to")
     }
 }
+
+
+fun networkparser(text:String)
+{
+    for (i in 1..5)
+    {
+
+    }
+}
+fun networkrequest(info: String){
+    val imageloc = "https://assets.stickpng.com/images/587185d57b7f6103e35c6cc7.png"
+    val requestModel = RequestModel("OmegaCalendarBot", info,imageloc)
+
+    val response = ServiceBuilder.buildService(ApiInterface::class.java)
+    response.sendReq(requestModel).enqueue(
+        object : Callback<ResponseModel> {
+            override fun onResponse(
+                call: Call<ResponseModel>,
+                response: Response<ResponseModel>
+            ) {
+                return
+            }
+
+            override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+                return
+            }
+
+        }
+    )
+}
+
+
+//https://discord.com/api/webhooks/1042640071779680327/nfJauDqQ8BWP5iFIckpXrcBqqH_y50EE2VQdEfVLBONy4-SgN4IqKY8OL0tTNj8GgHlc
+//https://discord.com/api/webhooks/1042645972729204776/cj9-zSz_sazT-WT_STxjz5T9apTwHhNkvs7nvHX97VL0PJKgvcqXqy7YutyckmsOaPOb
